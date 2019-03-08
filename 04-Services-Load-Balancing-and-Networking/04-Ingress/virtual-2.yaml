@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+Metadata:
+  name: name-virtual-host-ingress
+Spec:
+  Rules:
+  - host: first.bar.com
+    Http:
+      Paths:
+      - backend:
+          serviceName: service1
+          servicePort: 80
+  - host: second.foo.com
+    Http:
+      Paths:
+      - backend:
+          serviceName: service2
+          servicePort: 80
+  - http:
+      Paths:
+      - backend:
+          serviceName: service3
+          servicePort: 80
+

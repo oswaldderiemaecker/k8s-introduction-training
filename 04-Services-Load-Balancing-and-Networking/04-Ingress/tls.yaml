@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+Metadata:
+  name: tls-example-ingress
+Spec:
+  Tls:
+  - hosts:
+    - sslexample.foo.com
+    secretName: testsecret-tls
+  Rules:
+    - host: sslexample.foo.com
+      Http:
+        Paths:
+        - path: /
+          Backend:
+            serviceName: service1
+            servicePort: 80
