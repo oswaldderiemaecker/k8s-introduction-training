@@ -12,6 +12,6 @@ spec:
   initContainers:
   - name: init-myservice
     image: busybox
-    https://www.siteground.com/kb/how_to_generate_an_ssh_key_pair_in_mac_os/  - name: init-mydb
+  - name: init-mydb
     image: busybox
     command: ['sh', '-c', 'until nslookup mydb; do echo waiting for mydb; sleep 2; done;']
